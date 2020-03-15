@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,14 +30,17 @@ namespace Composite_TreeNumbers__Fro_Test
             childs.Remove(c);
         }
 
-        public override void Draw(string space)
+        public override int Sum()
         {
-            Console.WriteLine(space + this.Number);
+            int sum = this.GetNumber();
 
             foreach (Component c in childs)
             {
-                c.Draw(space + "    ");
+                sum += c.GetNumber();
             }
+
+            return sum;
         }
     }
 }
+
