@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +20,7 @@ namespace Composite_TreeNumbers__Fro_Test
 
         public abstract IList<Component> GetChilds();
 
-        public abstract void Draw(string space);
+        public abstract int Sum();
 
         public int GetNumber()
         {
@@ -28,3 +28,4 @@ namespace Composite_TreeNumbers__Fro_Test
         }
     }
 }
+
