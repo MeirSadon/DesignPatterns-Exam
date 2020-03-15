@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +27,9 @@ namespace Composite_TreeNumbers__Fro_Test
             throw new NotSupportedException("Leaf element has not children");
         }
 
-        public override void Draw(string space)
+        public override int Sum()
         {
-            Console.WriteLine(space + this.Number);
+            return this.GetNumber();
         }
     }
 }
