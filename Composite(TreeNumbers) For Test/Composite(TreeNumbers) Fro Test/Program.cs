@@ -52,7 +52,6 @@ namespace Composite_TreeNumbers__Fro_Test
 
         static bool CheckIfEven(Component element)
         {
-            //bool everyIsEven = true;
             if (!(element.GetNumber() % 2 == 0))
                 return false;
 
@@ -63,10 +62,11 @@ namespace Composite_TreeNumbers__Fro_Test
             }
             else
             {
-            foreach (Component c in element.GetChilds())
-            {
-                return CheckIfEven(c);
-            }
+                foreach (Component c in element.GetChilds())
+                {
+                    if (!CheckIfEven(c))
+                        return false;
+                }
             }
             return true;
         }
