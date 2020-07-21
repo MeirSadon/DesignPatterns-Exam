@@ -52,23 +52,23 @@ namespace Composite_TreeNumbers__Fro_Test
 
         static bool CheckIfEven(Component element)
         {
-            if (!(element.GetNumber() % 2 == 0))
+            if (!(element.GetNumber() % 2 == 0)) // אם לא מתחלק תחזיר שקר
                 return false;
 
-            if(element.GetChilds() == null)
+            if(element.GetChilds() == null) // אם זה leaf תבדוק אם הוא מחזיר אמת
             {
                 if (!(element.GetNumber() % 2 == 0))
                     return false; // If It's Leaf Stop The Recusrion
             }
-            else
+            else // אם זה ענף
             {
-                foreach (Component c in element.GetChilds())
+                foreach (Component c in element.GetChilds()) // תעבור על כל הילדים שלו
                 {
-                    if (!CheckIfEven(c))
-                        return false;
+                    if (!CheckIfEven(c)) // תבדוק עם כל בן הוא זוגי או לא
+                        return false; // במקרה ולא הפונקציה הפנימית תחזיר שקר וגם הפונקציה החיצונית
                 }
             }
-            return true;
+            return true; // אם לא קרה שקר תחזיר אמת
         }
     }
 }
